@@ -14,19 +14,33 @@ const images = [
 ];
 
 const listOfPictures = document.querySelector("#gallery");
+listOfPictures.classList.add("list");
 console.log(listOfPictures);
 
-const makeGallery = (array) => {
+const makeGallery = (array, place) => {
   return array.map((elem) => {
-    const listEl = document.createElement("li");
-    const imgEl = document.createElement("img");
-    imgEl.src = elem.url;
-    imgEl.alt = elem.alt;
-    listEl.append(imgEl);
-    return listEl;
+    place.insertAdjacentHTML(
+      "beforeend",
+      `<li class="thumb"><img class="picture" 
+      src="${elem.url}" alt="${elem.alt}" /></li>`
+    );
   });
 };
 
-const elements = makeGallery(images);
+makeGallery(images, listOfPictures);
 
-listOfPictures.append(...elements);
+// const makeGallery = (array) => {
+//   return array.map((elem) => {
+//     const item = document.createElement("li");
+//     item.classList.add('thumb')
+//     const imgEl = document.createElement("img");
+//     imgEl.classList.add('picture')
+//     imgEl.src = elem.url;
+//     imgEl.alt = elem.alt;
+//     item.append(imgEl);
+//     return item;
+//   });
+// };
+
+// const elements = makeGallery(images);
+// listOfPictures.append(...elements);
