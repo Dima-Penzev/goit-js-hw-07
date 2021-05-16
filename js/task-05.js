@@ -1,6 +1,6 @@
-const formForName = document.querySelector("#name-input");
+const inputForName = document.querySelector("#name-input");
 const stringWithName = document.querySelector("#name-output");
 
-formForName.addEventListener("input", () => {
-  stringWithName.innerHTML = formForName.value;
+inputForName.addEventListener("input", () => {
+  stringWithName.innerHTML = inputForName.value;
 });

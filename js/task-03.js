@@ -28,19 +28,3 @@ const makeGallery = (array, place) => {
 };
 
 makeGallery(images, listOfPictures);
-
-// const makeGallery = (array) => {
-//   return array.map((elem) => {
-//     const item = document.createElement("li");
-//     item.classList.add('thumb')
-//     const imgEl = document.createElement("img");
-//     imgEl.classList.add('picture')
-//     imgEl.src = elem.url;
-//     imgEl.alt = elem.alt;
-//     item.append(imgEl);
-//     return item;
-//   });
-// };
-
-// const elements = makeGallery(images);
-// listOfPictures.append(...elements);
