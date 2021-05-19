@@ -1,12 +1,14 @@
 const inputForWord = document.querySelector('#validation-input');
 
 inputForWord.addEventListener('change', () => {
-  inputForWord.classList.add('invalid');
-
   if (
-    inputForWord.value.length ===
+    inputForWord.value.length !==
     Number(inputForWord.getAttribute('data-length'))
   ) {
-    inputForWord.classList.replace('invalid', 'valid');
+    inputForWord.classList.add('invalid');
+    inputForWord.classList.remove('valid');
+  } else {
+    inputForWord.classList.remove('invalid');
+    inputForWord.classList.add('valid');
   }
 });

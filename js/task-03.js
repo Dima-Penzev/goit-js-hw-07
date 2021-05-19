@@ -17,14 +17,12 @@ const listOfPictures = document.querySelector('#gallery');
 listOfPictures.classList.add('list');
 console.log(listOfPictures);
 
-const makeGallery = (array, place) => {
+const makeString = array => {
   return array.map(elem => {
-    place.insertAdjacentHTML(
-      'beforeend',
-      `<li class="thumb"><img class="picture" 
-      src="${elem.url}" alt="${elem.alt}" /></li>`,
-    );
+    return `<li class="thumb"><img class="picture" 
+     src="${elem.url}" alt="${elem.alt}" /></li>`;
   });
 };
 
-makeGallery(images, listOfPictures);
+const elements = makeString(images);
+listOfPictures.insertAdjacentHTML('beforeend', elements);

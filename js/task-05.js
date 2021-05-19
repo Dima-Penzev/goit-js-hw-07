@@ -1,6 +1,12 @@
 const inputForName = document.querySelector('#name-input');
 const stringWithName = document.querySelector('#name-output');
 
+const defaultValue = stringWithName.textContent;
+
 inputForName.addEventListener('input', () => {
-  stringWithName.innerHTML = inputForName.value;
+  if (inputForName.value) {
+    stringWithName.textContent = inputForName.value;
+  } else {
+    stringWithName.textContent = defaultValue;
+  }
 });
