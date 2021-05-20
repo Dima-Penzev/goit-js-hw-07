@@ -24,5 +24,5 @@ const makeString = array => {
   });
 };
 
-const elements = makeString(images);
+const elements = makeString(images).join('');
 listOfPictures.insertAdjacentHTML('beforeend', elements);
